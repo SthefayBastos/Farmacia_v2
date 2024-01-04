@@ -31,13 +31,19 @@ public class Produto {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
-	private String categoria;
+	private Categoria categoria;
     
 	@Column(length = 1000)
 	@NotBlank(message = "O tipo é obrigatório!")
     private String tipo;
 	
-    public String getTipo() {
+    public Categoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	public String getTipo() {
 		return tipo;
 	}
 	public void setTipo(String tipo) {
@@ -62,11 +68,5 @@ public class Produto {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-	public String getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-
+	
 }
