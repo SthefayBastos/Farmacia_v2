@@ -44,7 +44,7 @@ public class CategoriaController {
 	            .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	    }
 	    
-	    @GetMapping("/descricao/{descricao}")
+	    @GetMapping("/tipo/{tipo}")
 	    public ResponseEntity<List<Categoria>> getByTitle(@PathVariable 
 	    String tipo){
 	        return ResponseEntity.ok(categoriaRepository
